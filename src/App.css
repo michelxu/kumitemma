@@ -1,0 +1,19 @@
+/* For WebKit-based browsers */
+::-webkit-scrollbar {
+  width: 10px; /* Set the width of the scrollbar */
+  border-radius: 8px; /* Make it rounded */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #b7b7b7; /* Set the color of the scrollbar thumb */
+  border-radius: 8px; /* Make it rounded */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a6a6a6; /* Set the color when hovering over the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #ffffff; /* Set the color of the scrollbar track */
+  border-radius: 8px; /* Make it rounded */
+}

@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "username": "xmichxl",
+      "coins": 5000,
+      "xp": 1150,
+      "myCollection": [15, 11, 23, 3],
+      "unassigned": [9, 10, 3, 33, 44, 55, 66],
+      "packs": [3, 3, 3, 3, 1, 2, 3, 1, 2, 3]
+    },
+    {
+      "username": "tonymkt",
+      "coins": 5000,
+      "xp": 1000,
+      "myCollection": [7, 8, 16],
+      "unassigned": [11, 12],
+      "packs": [2, 2]
+    },
+    {
+      "username": "luisfgn64",
+      "coins": 3000,
+      "xp": 1000,
+      "myCollection": [13, 6, 20],
+      "unassigned": [11, 12],
+      "packs": [2, 2]
+    }
+  ]
+}
