@@ -1,7 +1,6 @@
 import jcvd from '../assets/fighters_img/jcvd.png'
 import hasbi from '../assets/fighters_img/Hasbi.png'
 import cat from '../assets/fighters_img/Cat.png'
-import herbdean from '../assets/fighters_img/Herb_Dean.png'
 
 const baseImg = 'https://dmxg5wxfqgb4u.cloudfront.net/styles/event_results_athlete_headshot/s3';
 const baseImg2 = 'https://dmxg5wxfqgb4u.cloudfront.net/styles/athlete_bio_full_body';
@@ -46,7 +45,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2023-03/JONES_JON_L_BELT_03_04.png`,
     rank: 0,
     record: '27-1 (1 NC)',
-    division: 'HW',
+    division: {
+      short_name: 'HW',
+      id: 8,
+      long_name: 'Heavyweight',
+    },
     country: 'US',
     stats: {
       overall: 93,
@@ -69,7 +72,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2023-02/VOLKANOVSKI_ALEXANDER_L_02-11.png`,
     rank: 0,
     record: '25-2',
-    division: 'FW',
+    division: {
+      short_name: 'FW',
+      id: 3,
+      long_name: 'Featherweight',
+    },
     country: 'AU',
     stats: {
       overall: 92,
@@ -92,7 +99,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2023-06/OLIVEIRA_CHARLES_L_06-10.png`,
     rank: 1,
     record: '33-9',
-    division: 'LW',
+    division: {
+      short_name: 'LW',
+      id: 4,
+      long_name: 'Lightweight',
+    },
     country: 'BR',
     stats: {
       overall: 89,
@@ -115,7 +126,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2023-01/MORENO_BRANDON_L_BELT.png`,
     rank: 0,
     record: '21-6-2',
-    division: 'FLW',
+    division:{
+      short_name: 'FLW',
+      id: 1,
+      long_name: 'Flyweight',
+    },
     country: 'MX',
     stats: {
       overall: 89,
@@ -138,7 +153,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2023-05/STERLING_ALJAMAIN_L_BELT_05-06.png`,
     rank: 0,
     record: '23-3',
-    division: 'BW',
+    division: {
+      short_name: 'BW',
+      id: 2,
+      long_name: 'Bantamweight',
+    },
     country: 'JM',
     stats: {
       overall: 88,
@@ -161,7 +180,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2023-02/MAKHACHEV_ISLAM_L_BELT_02-11.png`,
     rank: 0,
     record: '24-1',
-    division: 'LW',
+    division: {
+      short_name: 'LW',
+      id: 4,
+      long_name: 'Lightweight',
+    },
     country: 'RU',
     stats: {
       overall: 90,
@@ -184,7 +207,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2023-03/EDWARDS_LEON_L_BELT_03-18.png`,
     rank: 0,
     record: '21-3',
-    division: 'WW',
+    division: {
+      short_name: 'WW',
+      id: 5,
+      long_name: 'Welterweight',
+    },
     country: 'JM',
     stats: {
       overall: 89,
@@ -207,7 +234,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2023-04/ADESANYA_ISRAEL_L_BELT_07-02.png`,
     rank: 0,
     record: '24-2',
-    division: 'MW',
+    division: {
+      short_name: 'MW',
+      id: 6,
+      long_name: 'Middleweight',
+    },
     country: 'NG',
     stats: {
       overall: 89,
@@ -230,7 +261,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2023-01/HILL_JAMAHAL_L_BELTCOMP.png`,
     rank: 0,
     record: '12-1',
-    division: 'LHW',
+    division: {
+      short_name: 'LHW',
+      id: 7,
+      long_name: 'Light Heavyweight',
+    },
     country: 'US',
     stats: {
       overall: 86,
@@ -253,7 +288,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2023-04/USMAN_KAMARU_L_03-18.png`,
     rank: 1,
     record: '20-3',
-    division: 'WW',
+    division: {
+      short_name: 'WW',
+      id: 5,
+      long_name: 'Welterweight',
+    },
     country: 'NG',
     stats: {
       overall: 89,
@@ -276,7 +315,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2022-07/55fbce59-2dd7-4210-8501-b88e0c948d80%252FPEREIRA_ALEX_L_07-02.png`,
     rank: 99,
     record: '7-2',
-    division: 'LHW',
+    division: {
+      short_name: 'LHW',
+      id: 7,
+      long_name: 'Light Heavyweight',
+    },
     country: 'BR',
     stats: {
       overall: 87,
@@ -299,7 +342,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2021-05/68263%252Fprofile-galery%252Ffullbodyleft-picture%252FPROCHAZKA_JIRI_L_05-01.png`,
     rank: 1,
     record: '29-3-1',
-    division: 'LHW',
+    division: {
+      short_name: 'LHW',
+      id: 7,
+      long_name: 'Light Heavyweight',
+    },
     country: 'CZ',
     stats: {
       overall: 89,
@@ -322,7 +369,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2023-04/HOLLOWAY_MAX_L_04-15.png`,
     rank: 2,
     record: '24-7',
-    division: 'FW',
+    division: {
+      short_name: 'FW',
+      id: 3,
+      long_name: 'Featherweight',
+    },
     country: 'US',
     stats: {
       overall: 89,
@@ -345,7 +396,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2022-11/POIRIER_DUSTIN_L_11-12.png`,
     rank: 2,
     record: '29-7',
-    division: 'LW',
+    division: {
+      short_name: 'LW',
+      id: 4,
+      long_name: 'Lightweight',
+    },
     country: 'US',
     stats: {
       overall: 89,
@@ -368,7 +423,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2022-09/WHITTAKER_ROBERT_L_09-03.png`,
     rank: 1,
     record: '25-6',
-    division: 'MW',
+    division: {
+      short_name: 'MW',
+      id: 6,
+      long_name: 'Middleweight',
+    },
     country: 'NZ',
     stats: {
       overall: 88,
@@ -391,7 +450,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2023-05/RODRIGUEZ_YAIR_L_BELT.png`,
     rank: 0,
     record: '16-3',
-    division: 'FW',
+    division: {
+      short_name: 'FW',
+      id: 3,
+      long_name: 'Featherweight',
+    },
     country: 'MX',
     stats: {
       overall: 88,
@@ -414,7 +477,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2022-09/GANE_CYRIL_L_09-03.png`,
     rank: 1,
     record: '11-2',
-    division: 'HW',
+    division: {
+      short_name: 'HW',
+      id: 8,
+      long_name: 'Heavyweight',
+    },
     country: 'FR',
     stats: {
       overall: 87,
@@ -437,7 +504,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2023-01/FIGUEIREDO_DEIVESON_L_01-22.png`,
     rank: 1,
     record: '21-3-1',
-    division: 'FLW',
+    division:{
+      short_name: 'FLW',
+      id: 1,
+      long_name: 'Flyweight',
+  },
     country: 'BR',
     stats: {
       overall: 87,
@@ -460,7 +531,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2022-08/DVALISHVILI_MERAB_L_08-20.png`,
     rank: 1,
     record: '16-4-0',
-    division: 'BW',
+    division: {
+      short_name: 'BW',
+      id: 2,
+      long_name: 'Bantamweight',
+    },
     country: 'GE',
     stats: {
       overall: 86,
@@ -483,7 +558,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2022-07/093cd532-5efa-4ac5-afdc-54e1004291b1%252FO%2527MALLEY_SEAN_L_07-02.png`,
     rank: 2,
     record: '16-1-0',
-    division: 'BW',
+    division: {
+      short_name: 'BW',
+      id: 2,
+      long_name: 'Bantamweight',
+    },
     country: 'US',
     stats: {
       overall: 85,
@@ -506,7 +585,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2023-05/CEJUDO_HENRY_R_05-06.png`,
     rank: 3,
     record: '16-3-0',
-    division: 'BW',
+    division: {
+      short_name: 'BW',
+      id: 2,
+      long_name: 'Bantamweight',
+    },
     country: 'US',
     stats: {
       overall: 88,
@@ -529,7 +612,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2022-09/SANDHAGEN_CORY_L_09-17.png`,
     rank: 4,
     record: '16-4-0',
-    division: 'BW',
+    division: {
+      short_name: 'BW',
+      id: 2,
+      long_name: 'Bantamweight',
+    },
     country: 'US',
     stats: {
       overall: 86,
@@ -552,7 +639,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2023-03/GAETHJE_JUSTIN_L_03-18.png`,
     rank: 3,
     record: '25-4-0',
-    division: 'LW',
+    division: {
+      short_name: 'LW',
+      id: 4,
+      long_name: 'Lightweight',
+    },
     country: 'US',
     stats: {
       overall: 88,
@@ -575,7 +666,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2021-11/71660%252Fprofile-galery%252Ffullbodyleft-picture%252FCHIMAEV_KHAMZAT_L_10-30.png`,
     rank: 4,
     record: '12-0-0',
-    division: 'WW',
+    division: {
+      short_name: 'WW',
+      id: 5,
+      long_name: 'Welterweight',
+    },
     country: 'RU',
     stats: {
       overall: 88,
@@ -598,7 +693,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2023-06/ALBAZI_AMIR_L_06-03.png`,
     rank: 3,
     record: '17-1-0',
-    division: 'FLW',
+    division:{
+      short_name: 'FLW',
+      id: 1,
+      long_name: 'Flyweight',
+  },
     country: 'IQ',
     stats: {
       overall: 86,
@@ -621,7 +720,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2021-08/67251%252Fprofile-galery%252Ffullbodyleft-picture%252FPANTOJA_ALEXANDRE_L_08-21.png`,
     rank: 2,
     record: '25-5-0',
-    division: 'FLW',
+    division:{
+      short_name: 'FLW',
+      id: 1,
+      long_name: 'Flyweight',
+  },
     country: 'BR',
     stats: {
       overall: 87,
@@ -644,7 +747,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2023-06/KARA-FRANCE_KAI_L_07-30.png`,
     rank: 5,
     record: '24-11-0',
-    division: 'FLW',
+    division:{
+      short_name: 'FLW',
+      id: 1,
+      long_name: 'Flyweight',
+  },
     country: 'NZ',
     stats: {
       overall: 85,
@@ -667,7 +774,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2023-04/ROYVAL_BRANDON_L_04-15.png`,
     rank: 4,
     record: '15-6-0',
-    division: 'FLW',
+    division:{
+      short_name: 'FLW',
+      id: 1,
+      long_name: 'Flyweight',
+  },
     country: 'US',
     stats: {
       overall: 84,
@@ -690,7 +801,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2022-12/NICOLAU_MATHEUS_L_12-03.png`,
     rank: 6,
     record: '19-3-1',
-    division: 'FLW',
+    division:{
+      short_name: 'FLW',
+      id: 1,
+      long_name: 'Flyweight',
+  },
     country: 'BR',
     stats: {
       overall: 83,
@@ -713,7 +828,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2023-03/PEREZ_ALEX_L_03-25.png`,
     rank: 7,
     record: '24-7-0',
-    division: 'FLW',
+    division:{
+      short_name: 'FLW',
+      id: 1,
+      long_name: 'Flyweight',
+  },
     country: 'US',
     stats: {
       overall: 82,
@@ -736,7 +855,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2022-03/55dbfdbf-c5c1-479e-b681-44dbcae3e494%252FSCHNELL_MATT_L_02-12.png`,
     rank: 8,
     record: '16-8-0',
-    division: 'FLW',
+    division:{
+      short_name: 'FLW',
+      id: 1,
+      long_name: 'Flyweight',
+  },
     country: 'US',
     stats: {
       overall: 80,
@@ -759,7 +882,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2022-07/3db4f260-1bc8-4496-b77f-51e6a5c30329%252FKAPE_MANEL_L_06-11.png`,
     rank: 9,
     record: '18-6-0',
-    division: 'FLW',
+    division:{
+      short_name: 'FLW',
+      id: 1,
+      long_name: 'Flyweight',
+  },
     country: 'PT',
     stats: {
       overall: 82,
@@ -782,7 +909,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2022-11/ULANBEKOV_TAGIR_L_11-05.png`,
     rank: 12,
     record: '15-2-0',
-    division: 'FLW',
+    division:{
+      short_name: 'FLW',
+      id: 1,
+      long_name: 'Flyweight',
+  },
     country: 'RU',
     stats: {
       overall: 80,
@@ -805,7 +936,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2023-06/TAIRA_TATSURO_L_06-24.png`,
     rank: 16,
     record: '13-0-0',
-    division: 'FLW',
+    division:{
+      short_name: 'FLW',
+      id: 1,
+      long_name: 'Flyweight',
+  },
     country: 'JP',
     stats: {
       overall: 84,
@@ -828,7 +963,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2022-03/911ce7a0-a97f-497c-9a2d-b3bbfa3e50d8%252FMOKAEV_MUHAMMAD_L_03-19.png`,
     rank: 11,
     record: '10-0-0',
-    division: 'FLW',
+    division:{
+      short_name: 'FLW',
+      id: 1,
+      long_name: 'Flyweight',
+  },
     country: 'GB',
     stats: {
       overall: 83,
@@ -851,7 +990,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2023-06/ELLIOTT_TIM_L_06-03.png`,
     rank: 10,
     record: '20-12-1',
-    division: 'FLW',
+    division:{
+      short_name: 'FLW',
+      id: 1,
+      long_name: 'Flyweight',
+  },
     country: 'US',
     stats: {
       overall: 82,
@@ -874,7 +1017,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2023-04/ROSAS_JR_RAUL_L_04-08.png`,
     rank: 17,
     record: '7-1-0',
-    division: 'BW',
+    division: {
+      short_name: 'BW',
+      id: 2,
+      long_name: 'Bantamweight',
+    },
     country: 'MX',
     stats: {
       overall: 79,
@@ -897,7 +1044,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2023-03/YAN_PETR_L_03-11.png`,
     rank: 5,
     record: '16-5',
-    division: 'BW',
+    division: {
+      short_name: 'BW',
+      id: 2,
+      long_name: 'Bantamweight',
+    },
     country: 'RU',
     stats: {
       overall: 87,
@@ -920,7 +1071,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2023-03/VERA_MARLON_L_03-25.png`,
     rank: 6,
     record: '20-8-1',
-    division: 'BW',
+    division: {
+      short_name: 'BW',
+      id: 2,
+      long_name: 'Bantamweight',
+    },
     country: 'EC',
     stats: {
       overall: 85,
@@ -943,7 +1098,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2023-04/FONT_ROB_L_04-08.png`,
     rank: 7,
     record: '20-6-0',
-    division: 'BW',
+    division: {
+      short_name: 'BW',
+      id: 2,
+      long_name: 'Bantamweight',
+    },
     country: 'US',
     stats: {
       overall: 85,
@@ -966,7 +1125,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2018-11/SONG_YADONG_L.png`,
     rank: 8,
     record: '20-7-1',
-    division: 'BW',
+    division: {
+      short_name: 'BW',
+      id: 2,
+      long_name: 'Bantamweight',
+    },
     country: 'CN',
     stats: {
       overall: 84,
@@ -989,7 +1152,11 @@ export const fighters = [
     full_image: 'https://dmxg5wxfqgb4u.cloudfront.net/styles/athlete_bio_full_body/s3/2022-03/7a064993-dfca-4c8e-aca4-8268fc6e711b%252FCRUZ_DOMINICK_L_12-11.png',
     rank: 9,
     record: '24-4-0',
-    division: 'BW',
+    division: {
+      short_name: 'BW',
+      id: 2,
+      long_name: 'Bantamweight',
+    },
     country: 'US',
     stats: {
       overall: 84,
@@ -1012,7 +1179,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2023-04/MUNHOZ_PEDRO_L_04-15.png`,
     rank: 10,
     record: '20-7-0',
-    division: 'BW',
+    division: {
+      short_name: 'BW',
+      id: 2,
+      long_name: 'Bantamweight',
+    },
     country: 'BR',
     stats: {
       overall: 83,
@@ -1035,7 +1206,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2023-01/NURMAGOMEDOV_UMAR_L_01-14.png`,
     rank: 11,
     record: '16-0-0',
-    division: 'BW',
+    division: {
+      short_name: 'BW',
+      id: 2,
+      long_name: 'Bantamweight',
+    },
     country: 'RU',
     stats: {
       overall: 85,
@@ -1058,7 +1233,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2023-06/SIMON_RICKY_L_04-29.png`,
     rank: 12,
     record: '20-4-0',
-    division: 'BW',
+    division: {
+      short_name: 'BW',
+      id: 2,
+      long_name: 'Bantamweight',
+    },
     country: 'US',
     stats: {
       overall: 82,
@@ -1081,7 +1260,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2023-06/YANEZ_ADRIAN_L_04-08.png`,
     rank: 13,
     record: '16-4-0',
-    division: 'BW',
+    division: {
+      short_name: 'BW',
+      id: 2,
+      long_name: 'Bantamweight',
+    },
     country: 'US',
     stats: {
       overall: 82,
@@ -1104,7 +1287,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2021-09/68327%252Fprofile-galery%252Ffullbodyleft-picture%252FMARTINEZ_JONATHAN_L_09-04.png`,
     rank: 15,
     record: '18-4-0',
-    division: 'BW',
+    division: {
+      short_name: 'BW',
+      id: 2,
+      long_name: 'Bantamweight',
+    },
     country: 'US',
     stats: {
       overall: 82,
@@ -1127,7 +1314,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2022-07/ORTEGA_BRIAN_L_07-16.png`,
     rank: 3,
     record: '15-3',
-    division: 'FW',
+    division: {
+      short_name: 'FW',
+      id: 3,
+      long_name: 'Featherweight',
+    },
     country: 'MX',
     stats: {
       overall: 87,
@@ -1150,7 +1341,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2022-11/ALLEN_ARNOLD_L_10-29.png`,
     rank: 3,
     record: '19-2',
-    division: 'FW',
+    division: {
+      short_name: 'FW',
+      id: 3,
+      long_name: 'Featherweight',
+    },
     country: 'GB-ENG',
     stats: {
       overall: 86,
@@ -1173,7 +1368,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2023-02/TOPURIA_ILIA_L_12-10.png`,
     rank: 5,
     record: '14-0',
-    division: 'FW',
+    division: {
+      short_name: 'FW',
+      id: 3,
+      long_name: 'Featherweight',
+    },
     country: 'ES',
     stats: {
       overall: 88,
@@ -1196,7 +1395,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2023-06/EMMETT_JOSH_L_06-24.png`,
     rank: 3,
     record: '18-4',
-    division: 'FW',
+    division: {
+      short_name: 'FW',
+      id: 3,
+      long_name: 'Featherweight',
+    },
     country: 'US',
     stats: {
       overall: 86,
@@ -1219,7 +1422,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2019-11/MAGOMEDSHARIPOV_ZABIT_L.png`,
     rank: 3,
     record: '18-1',
-    division: 'FW',
+    division: {
+      short_name: 'FW',
+      id: 3,
+      long_name: 'Featherweight',
+    },
     country: 'RU',
     stats: {
       overall: 88,
@@ -1242,7 +1449,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2022-06/ac42f8ef-be39-4cec-9e97-79e5d3ecd610%252FKATTAR_CALVIN_L_06-18.png`,
     rank: 7,
     record: '23-7',
-    division: 'FW',
+    division: {
+      short_name: 'FW',
+      id: 3,
+      long_name: 'Featherweight',
+    },
     country: 'US',
     stats: {
       overall: 86,
@@ -1265,7 +1476,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2022-08/a23c5ddc-0bb5-492d-a81d-6c25f207859c%252FJUNG_CHAN_SUNG_L_04-09.png`,
     rank: 8,
     record: '17-7',
-    division: 'FW',
+    division: {
+      short_name: 'FW',
+      id: 3,
+      long_name: 'Featherweight',
+    },
     country: 'KR',
     stats: {
       overall: 85,
@@ -1288,7 +1503,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2021-04/69723%252Fprofile-galery%252Ffullbodyleft-picture%252FCHIKADZE_GIGA_L_05-01.png`,
     rank: 9,
     record: '14-3',
-    division: 'FW',
+    division: {
+      short_name: 'FW',
+      id: 3,
+      long_name: 'Featherweight',
+    },
     country: 'GE',
     stats: {
       overall: 84,
@@ -1311,7 +1530,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2023-05/EVLOEV_MOVSAR_L_05-06.png`,
     rank: 10,
     record: '17-0',
-    division: 'FW',
+    division: {
+      short_name: 'FW',
+      id: 3,
+      long_name: 'Featherweight',
+    },
     country: 'RU',
     stats: {
       overall: 85,
@@ -1334,7 +1557,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2022-09/YUSUFF_SODIQ_L_10-01.png?itok=WeaF0eXi`,
     rank: 11,
     record: '13-2',
-    division: 'FW',
+    division: {
+      short_name: 'FW',
+      id: 3,
+      long_name: 'Featherweight',
+    },
     country: 'NG',
     stats: {
       overall: 84,
@@ -1357,7 +1584,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2022-12/MITCHELL_BRYCE_L_12-10.png`,
     rank: 12,
     record: '15-1',
-    division: 'FW',
+    division: {
+      short_name: 'FW',
+      id: 3,
+      long_name: 'Featherweight',
+    },
     country: 'US',
     stats: {
       overall: 84,
@@ -1380,7 +1611,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2023-06/IGE_DAN_L_06-10.png`,
     rank: 13,
     record: '17-6',
-    division: 'FW',
+    division: {
+      short_name: 'FW',
+      id: 3,
+      long_name: 'Featherweight',
+    },
     country: 'US',
     stats: {
       overall: 83,
@@ -1403,7 +1638,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2023-04/BARBOZA_EDSON_L_04-15.png`,
     rank: 14,
     record: '23-11',
-    division: 'FW',
+    division: {
+      short_name: 'FW',
+      id: 3,
+      long_name: 'Featherweight',
+    },
     country: 'BR',
     stats: {
       overall: 84,
@@ -1426,7 +1665,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2023-06/CACERES_ALEX_L_06-03.png`,
     rank: 15,
     record: '21-13',
-    division: 'FW',
+    division: {
+      short_name: 'FW',
+      id: 3,
+      long_name: 'Featherweight',
+    },
     country: 'US',
     stats: {
       overall: 83,
@@ -1449,7 +1692,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2023-02/DARIUSH_BENEIL_L_10-22.png`,
     rank: 4,
     record: '22-5-1',
-    division: 'LW',
+    division: {
+      short_name: 'LW',
+      id: 4,
+      long_name: 'Lightweight',
+    },
     country: 'US',
     stats: {
       overall: 87,
@@ -1472,7 +1719,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2022-05/1dd9466e-5d52-4a1d-8af9-201e9af35e6a%252FCHANDLER_MICHAEL_L_05-07.png`,
     rank: 5,
     record: '23-8',
-    division: 'LW',
+    division: {
+      short_name: 'LW',
+      id: 4,
+      long_name: 'Lightweight',
+    },
     country: 'US',
     stats: {
       overall: 87,
@@ -1495,7 +1746,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2022-07/b3773873-9374-4236-8551-183b96c9498c%252FFIZIEV_RAFAEL_L_07-09.png?itok=rtiMC1XZ`,
     rank: 6,
     record: '12-2',
-    division: 'LW',
+    division: {
+      short_name: 'LW',
+      id: 4,
+      long_name: 'Lightweight',
+    },
     country: 'AZ',
     stats: {
       overall: 87,
@@ -1518,7 +1773,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2023-03/GAMROT_MATEUSZ_L_03-05.png`,
     rank: 7,
     record: '22-2',
-    division: 'LW',
+    division: {
+      short_name: 'LW',
+      id: 4,
+      long_name: 'Lightweight',
+    },
     country: 'PL',
     stats: {
       overall: 86,
@@ -1541,7 +1800,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2023-06/TSARUKYAN_ARMAN_L_06-17.png`,
     rank: 8,
     record: '20-3',
-    division: 'LW',
+    division: {
+      short_name: 'LW',
+      id: 4,
+      long_name: 'Lightweight',
+    },
     country: 'AM',
     stats: {
       overall: 87,
@@ -1564,7 +1827,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2023-02/DOS_ANJOS_RAFAEL_L_12-03.png`,
     rank: 9,
     record: '32-14',
-    division: 'LW',
+    division: {
+      short_name: 'LW',
+      id: 4,
+      long_name: 'Lightweight',
+    },
     country: 'BR',
     stats: {
       overall: 86,
@@ -1587,7 +1854,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2022-11/DAWSON_GRANT_L_11-05.png`,
     rank: 10,
     record: '20-1-1',
-    division: 'LW',
+    division: {
+      short_name: 'LW',
+      id: 4,
+      long_name: 'Lightweight',
+    },
     country: 'US',
     stats: {
       overall: 86,
@@ -1610,7 +1881,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2022-11/HOOKER_DAN_L_11-12.png`,
     rank: 11,
     record: '23-12-0',
-    division: 'LW',
+    division: {
+      short_name: 'LW',
+      id: 4,
+      long_name: 'Lightweight',
+    },
     country: 'NZ',
     stats: {
       overall: 86,
@@ -1633,7 +1908,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2023-07/TURNER_JALIN_L_07-08.png`,
     rank: 12,
     record: '14-7-0',
-    division: 'LW',
+    division: {
+      short_name: 'LW',
+      id: 4,
+      long_name: 'Lightweight',
+    },
     country: 'US',
     stats: {
       overall: 85,
@@ -1656,7 +1935,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2022-03/984198d1-4d34-4681-b99d-b9e9449b0405%252FMOICANO_RENATO_L_03-05.png`,
     rank: 13,
     record: '17-5-1',
-    division: 'LW',
+    division: {
+      short_name: 'LW',
+      id: 4,
+      long_name: 'Lightweight',
+    },
     country: 'BR',
     stats: {
       overall: 84,
@@ -1679,7 +1962,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2023-06/ISMAGULOV_DAMIR_L_07-01.png`,
     rank: 14,
     record: '24-2-0',
-    division: 'LW',
+    division: {
+      short_name: 'LW',
+      id: 4,
+      long_name: 'Lightweight',
+    },
     country: 'RU',
     stats: {
       overall: 85,
@@ -1702,7 +1989,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2022-11/FREVOLA_MATT_L_11-12.png`,
     rank: 15,
     record: '11-3-1',
-    division: 'LW',
+    division: {
+      short_name: 'LW',
+      id: 4,
+      long_name: 'Lightweight',
+    },
     country: 'US',
     stats: {
       overall: 84,
@@ -1725,7 +2016,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2023-05/DOBER_DREW_L_05-06.png`,
     rank: 16,
     record: '26-12',
-    division: 'LW',
+    division: {
+      short_name: 'LW',
+      id: 4,
+      long_name: 'Lightweight',
+    },
     country: 'US',
     stats: {
       overall: 84,
@@ -1748,7 +2043,11 @@ export const fighters = [
     full_image: 'https://dmxg5wxfqgb4u.cloudfront.net/styles/athlete_bio_full_body/s3/2023-04/GREEN_BOBBY_L_04-22.png',
     rank: 16,
     record: '29-14-1',
-    division: 'LW',
+    division: {
+      short_name: 'LW',
+      id: 4,
+      long_name: 'Lightweight',
+    },
     country: 'US',
     stats: {
       overall: 83,
@@ -1771,7 +2070,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2023-05/FERREIRA_DIEGO_L_05-20.png`,
     rank: 16,
     record: '18-5-0',
-    division: 'LW',
+    division: {
+      short_name: 'LW',
+      id: 4,
+      long_name: 'Lightweight',
+    },
     country: 'BR',
     stats: {
       overall: 83,
@@ -1794,7 +2097,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2023-06/KUTATELADZE_GURAM_L_07-01.png`,
     rank: 16,
     record: '12-4-0',
-    division: 'LW',
+    division: {
+      short_name: 'LW',
+      id: 4,
+      long_name: 'Lightweight',
+    },
     country: 'GE',
     stats: {
       overall: 83,
@@ -1817,7 +2124,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2022-12/PIMBLETT_PADDY_L_12-10.png`,
     rank: 16,
     record: '20-3-0',
-    division: 'LW',
+    division: {
+      short_name: 'LW',
+      id: 4,
+      long_name: 'Lightweight',
+    },
     country: 'GB-ENG',
     stats: {
       overall: 82,
@@ -1840,7 +2151,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2022-05/16e00f57-1cbd-42d9-99f1-5be760a46643%252FJOHNSON_MICHAEL_L_05-14.png`,
     rank: 16,
     record: '22-19-0',
-    division: 'LW',
+    division: {
+      short_name: 'LW',
+      id: 4,
+      long_name: 'Lightweight',
+    },
     country: 'US',
     stats: {
       overall: 81,
@@ -1863,7 +2178,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2023-06/MILLER_JIM_L_06-03.png`,
     rank: 16,
     record: '36-17-0',
-    division: 'LW',
+    division: {
+      short_name: 'LW',
+      id: 4,
+      long_name: 'Lightweight',
+    },
     country: 'US',
     stats: {
       overall: 82,
@@ -1886,7 +2205,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2023-04/BAHAMONDES_IGNACIO_L.png`,
     rank: 16,
     record: '14-4-0',
-    division: 'LW',
+    division: {
+      short_name: 'LW',
+      id: 4,
+      long_name: 'Lightweight',
+    },
     country: 'CL',
     stats: {
       overall: 81,
@@ -1909,7 +2232,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2023-04/GUIDA_CLAY_L_04-15.png`,
     rank: 16,
     record: '38-20-0',
-    division: 'LW',
+    division: {
+      short_name: 'LW',
+      id: 4,
+      long_name: 'Lightweight',
+    },
     country: 'US',
     stats: {
       overall: 81,
@@ -1932,7 +2259,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2023-06/REBECKI_MATEUSZ_L_06-24.png`,
     rank: 16,
     record: '18-1-0',
-    division: 'LW',
+    division: {
+      short_name: 'LW',
+      id: 4,
+      long_name: 'Lightweight',
+    },
     country: 'PL',
     stats: {
       overall: 83,
@@ -1955,7 +2286,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2023-06/TORRES_MANUEL_L_06-17.png`,
     rank: 16,
     record: '14-2-0',
-    division: 'LW',
+    division: {
+      short_name: 'LW',
+      id: 4,
+      long_name: 'Lightweight',
+    },
     country: 'MX',
     stats: {
       overall: 82,
@@ -1978,7 +2313,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2021-11/71452%252Fprofile-galery%252Ffullbodyleft-picture%252FALVAREZ_JOEL_L_11-13.png`,
     rank: 16,
     record: '19-3-0',
-    division: 'LW',
+    division: {
+      short_name: 'LW',
+      id: 4,
+      long_name: 'Lightweight',
+    },
     country: 'ES',
     stats: {
       overall: 82,
@@ -2025,7 +2364,11 @@ export const fighters = [
     full_image: `${baseImg2}/s3/2020-10/68504%252Fprofile-galery%252Ffullbodyleft-picture%252FNURMAGOMEDOV_KHABIB_L_BELT_10-24.png`,
     rank: 99,
     record: '29-0-0',
-    division: 'LW',
+    division: {
+      short_name: 'LW',
+      id: 4,
+      long_name: 'Lightweight',
+    },
     country: 'RU',
     stats: {
       overall: 96,
@@ -2048,7 +2391,11 @@ export const fighters = [
     full_image: `https://officialpsds.com/imageview/rl/19/rl193x_large.png`,
     rank: 99,
     record: '6-2-0',
-    division: 'HW',
+    division: {
+      short_name: 'HW',
+      id: 8,
+      long_name: 'Heavyweight',
+    },
     country: 'BS',
     stats: {
       overall: 88,
@@ -2071,7 +2418,11 @@ export const fighters = [
     full_image: jcvd,
     rank: 99,
     record: '99-0-0',
-    division: 'MW',
+    division: {
+      short_name: 'MW',
+      id: 6,
+      long_name: 'Middleweight',
+    },
     country: 'BE',
     stats: {
       overall: 93,
@@ -2094,7 +2445,11 @@ export const fighters = [
     full_image: hasbi,
     rank: 99,
     record: '99-0-0',
-    division: 'FLW',
+    division:{
+      short_name: 'FLW',
+      id: 1,
+      long_name: 'Flyweight',
+  },
     country: 'RU',
     stats: {
       overall: 90,
@@ -2117,7 +2472,11 @@ export const fighters = [
     full_image: cat,
     rank: 99,
     record: '99-0-0',
-    division: 'HW',
+    division: {
+      short_name: 'HW',
+      id: 8,
+      long_name: 'Heavyweight',
+    },
     country: 'MX',
     stats: {
       overall: 90,

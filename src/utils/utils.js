@@ -12,7 +12,7 @@ export const getAllFighters = (array_ids) => {
   return filteredFighters;
 }
 
-//Obtener .png flag image
+//Get .png flag image
 export const getCountryFlagImage = (id) => {
   const flag = countries.find(country => country.id === id);
   const imageUrl = !flag ? 'https://flagicons.lipis.dev/flags/4x3/xx.svg' : flag.image;
@@ -20,7 +20,7 @@ export const getCountryFlagImage = (id) => {
   return imageUrl;
 }
 
-/* Obtener card_price/s [175, 2000] 
+/* Get card_price/s [175, 2000] from fighter object
 Recibe como parámetro un array de objetos o un solo objeto
 Este objeto tiene: fighter.rarity (30) y
 Busca el card_price en weights*/
@@ -41,7 +41,13 @@ export const getRarityPrice = (fighter) => {
   }
 }
 
+/*Get opponent weight division 
+Una pelea puede pasar con rivales de max 1 peso abajo o arriba*/
+export const getOpponentByDivision = (myDivision) => {
 
+}
+
+//Sort by one property
 export const orderFighterByProperty = (array, property) => {
   const sortedArray = [...array].sort((a, b) => {
     if (property.includes('.')) {
@@ -58,7 +64,6 @@ export const orderFighterByProperty = (array, property) => {
 
   return sortedArray;
 };
-
 //Sort by property and rarity
 export const orderFighterByPropertyAndRarity = (array, property1) => {
   const copiedArray = array.map((item) => ({ ...item })); // Create a deep copy of the array
@@ -85,8 +90,6 @@ export const orderFighterByPropertyAndRarity = (array, property1) => {
 
   return sortedArray;
 };
-
-
 // Helper function to get the value of a nested property
 const getNestedPropertyValue = (object, parts) => {
   let value = object;
@@ -101,3 +104,8 @@ const getNestedPropertyValue = (object, parts) => {
 
   return value;
 };
+
+/* g e n e r a l   u t i l s */
+export const getRandomNumber = (max) => {
+  return Math.floor(Math.random() * max);
+}

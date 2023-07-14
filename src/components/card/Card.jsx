@@ -100,7 +100,7 @@ const Card = ({id}) => {
         {/* right panel */}
         <div className={cardTopPanel}>
           <h3 className="text-4xl mt-1 tracking-tighter">{fighter.stats.overall}</h3>
-          <h3 className="font-medium text-xl -mt-1.5 tracking-tighter">{fighter.division}</h3>
+          <h3 className="font-medium text-xl -mt-1.5 tracking-tighter">{fighter.division.short_name}</h3>
           <h3 className="font-medium text-xl -mt-2.5 tracking-tighter">—</h3>
           <img src={country_flag} className="h-6 -mt-1" alt="" draggable="false"/>
         </div>
