@@ -25,7 +25,6 @@ const Opening = () => {
     console.log('hasViewed',hasViewedOpening)
 
 
-
     //1. Obtener all unassigned fighters • array de objetos con toda su data
     const allfighters = getAllFighters(uData.unassigned)
 

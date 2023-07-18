@@ -2339,8 +2339,8 @@ export const fighters = [
     aka: 'Unknown',
     front_image: `${baseImg}/2019-04/SILHOUETTE.png`,
     full_image: `${baseImg2}/s3/image/fighter_images/SHADOW_Fighter_fullLength_RED.png`,
-    rank: 0,
-    record: '18-4-0',
+    rank: 99,
+    record: '0-0-0',
     division: '??',
     country: '??',
     stats: {

@@ -19,6 +19,12 @@ const MyPacks = () => {
       // Find the pack object with the matching ID
       const pack = packs.find((pack) => pack.id === packID);
 
+      // Handle error if pack id does not exist
+      if (!pack) {
+        console.error(`Pack with ID: ${packID} not found.`)
+        return
+      }
+
       // Create a new object with the modified properties
       const modifiedProps = {
         idpack: pack.id,

@@ -19,12 +19,24 @@ const NavBarTitle = () => {
     if (pageName != 'home' && pageName != 'collection' && pageName != 'store' && pageName != 'picks' && pageName != 'about' && pageName != 'compete' && pageName != 'settings' && pageName != 'welcome' && pageName != 'opening')
     {
       setRenderBackBtn(
-      <button className='flex justify-center items-center rounded-md hover:bg-zinc-700 h-9 w-9 mt-1' onClick={() => navegacion(-1)}>
+      <button className='flex justify-center items-center rounded-md hover:bg-zinc-700 h-9 w-9 mt-1' onClick={handleNavegacion}>
         <MdArrowBackIos className='ms-2.5'/>
       </button>
       )
     }
-  }, [location]);
+  }, [location])
+
+  /*Si estás en /fight volver directo a /compete
+  si no, al terminar una pelea, redirecciona a /fight y al comenzar una pelea redirecciona a /in-progress
+  entonces el botón de volver guarda muchos /fight /in-progress /fight /in-progress /fight /in-progress
+  */
+  const handleNavegacion = () => {
+    if (location.pathname === '/fight') {
+      navegacion('/compete')
+    } else {
+      navegacion(-1)
+    }
+  }
 
   return (
     <>

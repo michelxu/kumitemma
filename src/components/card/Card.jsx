@@ -16,7 +16,8 @@ const Card = ({id}) => {
   }
 
   //variables iniciales
-  const fighter = getFighter(id);
+  let fighter = getFighter(id);
+  if(!fighter) fighter = getFighter(999)
   const country_flag = getCountryFlag(fighter.country);
   //name (quita el primer nombre y deja el resto)
   const fighter_name = fighter.name.split(" ");

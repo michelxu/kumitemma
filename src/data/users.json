@@ -6,7 +6,23 @@
       "xp": 1150,
       "myCollection": [15, 11, 23, 3],
       "unassigned": [9, 10, 3, 33, 44, 55, 66],
-      "packs": [3, 3, 3, 3, 1, 2, 3, 1, 2, 3]
+      "packs": [3, 3, 4, 5, 1, 2, 3, 1, 2, 3, 3, 3],
+      "compete": {
+        "recordedDate": "",
+        "fightsToday": 0,
+        "fightInProgress": "false",
+        "myFighter": "",
+        "myOpponent": "",
+        "winner": "",
+        "roundsWinners" : [],
+        "scorecard" : {
+          "myFighter": [],
+          "myOpponent": []
+        },
+        "rounds" : [],
+        "winMethod": "",
+        "points": 0
+      }
     },
     {
       "username": "tonymkt",
@@ -14,7 +30,20 @@
       "xp": 1000,
       "myCollection": [7, 8, 16],
       "unassigned": [11, 12],
-      "packs": [2, 2]
+      "packs": [2, 2],
+      "compete": {
+        "recordedDate": "",
+        "fightsToday": 0,
+        "fightInProgress": "false",
+        "myFighter": "",
+        "myOpponent": "",
+        "winner": "",
+        "roundsWinners" : [],
+        "roundsScorecard" : [],
+        "rounds" : [],
+        "winMethod": "",
+        "points": 0
+      }
     },
     {
       "username": "luisfgn64",

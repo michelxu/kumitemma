@@ -5,6 +5,7 @@ import miReducer from './miReducer'
 import types from './types'
 import usersJson from '../data/users.json'
 import { weights } from '../data/data'
+import { getNestedPropertyValue } from '../utils/utils'
 
 const init = () => {
   const valor = localStorage.getItem('estado')
@@ -44,7 +45,7 @@ const Provider = ({ children }) => {
     if (uData && Object.keys(uData).length > 0) {
       console.log('user usestate: ', uData)
       console.log('user localstorage: ', getUserDataByUsername(referencia))
-      console.log('allusers localstorage: ', getAllUsersData())
+      //console.log('allusers localstorage: ', getAllUsersData())
     }
   }, [uData])
 
@@ -116,11 +117,24 @@ const logout = () => {
 
   // Function to SET a specific property for a user
   /* Sobreescribe el valor, puede ser un valor o un array */
-  const setUserDataProperty = (username, propertyName, value) => {
+  /*const setUserDataProperty = (username, propertyName, value) => {
     const userData = getUserDataByUsername(username);
     if (userData) {
       userData[propertyName] = value;
       setUserDataByUsername(username, userData);
+    }
+  };*/
+  // Updated, handles nested properties
+  const setUserDataProperty = (username, propertyName, value) => {
+    const userData = getUserDataByUsername(username);
+    if (userData) {
+      const propertyParts = propertyName.split('.');
+      const lastPart = propertyParts.pop();
+      const parentObject = getNestedPropertyValue(userData, propertyParts);
+      if (parentObject) {
+        parentObject[lastPart] = value;
+        setUserDataByUsername(username, userData);
+      }
     }
   };
 

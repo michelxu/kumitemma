@@ -1,14 +1,15 @@
 import Layout from "../components/layout/Layout"
 import Panel from "../components/panels/Panel"
 import kumite_logo_sm from '../assets/kumite_logo_sm.png' /* imgs */
-
+import my_cards_06 from '../assets/my_cards_06.png'
+import my_cards_07 from '../assets/my_cards_07.png'
 
 const Compete = () => {
   const panels = [
     {
     title: 'Fight Night Bout',
-    image: '',
-    description: `Predict the winners of the upcoming UFC events and earn rewards.
+    image: my_cards_06,
+    description: `Compete in daily solo Fight Bouts and earn rewards.
     `,
     to: 'fight',
     type: 'description_link',
@@ -18,7 +19,7 @@ const Compete = () => {
       image: kumite_logo_sm,
       description: `This feature is not available.`,
       to: '',
-      type: 'description',
+      type: 'description_gray',
       },
   ]
 

@@ -14,6 +14,7 @@ import MyPacks from "../pages/MyPacks"
 import StorePacks from "../pages/StorePacks"
 import Opening from "../pages/Opening"
 import Fight from "../pages/Compete/Fight"
+import InProgress from "../pages/Compete/InProgress"
 
 const Router2 = () => {
   return (
@@ -25,6 +26,7 @@ const Router2 = () => {
       <Route path='/database' element={<Database/>} />
       <Route path='/compete' element={<Compete/>} />
       <Route path='/fight' element={<Fight/>} />
+      <Route path='/in-progress' element={<InProgress/>} />
       <Route path='/picks' element={<Picks/>} />
       <Route path='/store' element={<Store/>} />
       <Route path='/my-packs' element={<MyPacks/>} />

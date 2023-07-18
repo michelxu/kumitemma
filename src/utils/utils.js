@@ -1,9 +1,18 @@
 import { countries, weights } from "../data/data";
 import { fighters } from "../data/data";
+import cloneDeep from 'lodash/cloneDeep';
 
-export const getFighter = (id) => {
+/*export const getFighter = (id) => {
   return fighters.find(fighter => fighter.id === id);
-}
+}*/
+//Deep copy
+export const getFighter = (id) => {
+  const fighter = fighters.find(fighter => fighter.id === id);
+  if (fighter) {
+    return cloneDeep(fighter);
+  }
+  return null;
+};
 
 export const getAllFighters = (array_ids) => {
   // Filter the fighters based on the provided array of ids
@@ -91,7 +100,7 @@ export const orderFighterByPropertyAndRarity = (array, property1) => {
   return sortedArray;
 };
 // Helper function to get the value of a nested property
-const getNestedPropertyValue = (object, parts) => {
+export const getNestedPropertyValue = (object, parts) => {
   let value = object;
 
   for (let part of parts) {
@@ -108,4 +117,8 @@ const getNestedPropertyValue = (object, parts) => {
 /* g e n e r a l   u t i l s */
 export const getRandomNumber = (max) => {
   return Math.floor(Math.random() * max);
+}
+
+export const getSumArray = (array) => {
+  return array.reduce((acc, currentValue) => acc + currentValue, 0)
 }

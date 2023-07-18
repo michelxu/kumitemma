@@ -73,6 +73,26 @@ const Panel = ({props}) => {
       </>
     )
   }
+  if ((type === 'description_gray')) {
+    //description, text at bottom, zinc color
+    renderedContent = (
+      <>
+      <div className='flex flex-col w-11/12 lg:max-w-[900px] h-[300px] sm:h-[364px] bg-zinc-800 border border-solid border-zinc-500 mx-4 cursor-not-allowed'>
+        <h1 className='text-2xl sm:text-4xl font-medium font-oswald italic text-zinc-50 tracking-tight p-2 uppercase'>
+          {title}
+        </h1>
+        <img src={image} alt='Welcome back' className='h-44 sm:h-60 justify-center items-center mx-auto pointer-events-none pb-2'/>
+        {/* bottom text description */}
+        <div className='flex-1'></div>
+        <div className='flex-grow-1 items-center w-full bg-zinc-700'>
+          <h2 className='font-normal font-poppins text-sm sm:text-base text-zinc-100 tracking-tight truncate-lines-2 md:truncate-none py-2 px-2'>
+            {description}
+          </h2>
+        </div>
+      </div>
+      </>
+    )
+  }
   if ((type === 'mini_link')) {
     //Mini banner h-[112px]
     renderedContent = (
@@ -126,7 +146,22 @@ const Panel = ({props}) => {
       <>
       <div className='flex flex-col w-11/12 lg:max-w-[900px] min-h-[300px] py-4 bg-slate-800 border border-solid border-slate-500 '>
         {/* text description */}
-        <div className='flex-grow-1 justify-center items-center w-full bg-slate-800'>
+        <div className='flex-grow-1 justify-center items-center w-full'>
+          <p className='font-normal font-poppins text-sm sm:text-base text-zinc-300 tracking-tight px-2' style={{ whiteSpace: 'pre-line' }}>
+            {description}
+          </p>
+        </div>
+      </div>
+      </>
+    )
+  }
+  if ((type === 'message_text_gray')) {
+    //Message, No title, No Link
+    renderedContent = (
+      <>
+      <div className='flex flex-col w-11/12 lg:max-w-[900px] min-h-[300px] py-4 bg-zinc-800 border border-solid border-zinc-500 cursor-not-allowed'>
+        {/* text description */}
+        <div className='flex-grow-1 justify-center items-center w-full'>
           <p className='font-normal font-poppins text-sm sm:text-base text-zinc-300 tracking-tight px-2' style={{ whiteSpace: 'pre-line' }}>
             {description}
           </p>

@@ -6,17 +6,21 @@ const Picks = () => {
     {
     title: 'Fight Picks',
     image: '',
-    description: `Predict the winners of the upcoming UFC events and earn rewards.
-    `,
+    description: `Predict the winners of the upcoming UFC events and earn rewards.`,
     to: '',
     type: 'mini_message',
     },
     {
       title: 'Claim your rewards',
       image: '',
-      description: `This feature is not available.`,
+      description: `Predict the winners of the upcoming UFC events and earn rewards as:
+      - Packs
+      - XP
+      - Badges
+
+      This feature is not available at the moment.`,
       to: 'home',
-      type: 'message_text',
+      type: 'message_text_gray',
       },
   ]
 
