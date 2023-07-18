@@ -18,6 +18,11 @@ const InProgress = () => {
   useEffect(() => {
     if (uData && Object.keys(uData).length === 0) return //espera a que cargue uData
 
+    if (uData.compete.fightInProgress === 'false'){
+      navegacion('/fight')
+      return
+    }
+
     // LOG: ¿Se han completado los rounds?
     if (uData.compete.scorecard.myFighter.length === uData.compete.rounds.length) {
       console.log('Se han completado los rounds. Termine la pelea.')

@@ -11,7 +11,8 @@ const Fight = () => {
   const navegacion = useNavigate();
   const {uData, setUData, getUserDataByUsername, setUserDataProperty} = useContext(Contexto)
   const [isClicked, setIsClicked] = useState(false) //animación
-  const today = new Date().toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' })
+  //const today = new Date().toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' })
+  const today = "07/19/2023"
 
   useEffect(() => {
     if (uData && Object.keys(uData).length === 0) return //espera a que cargue uData
@@ -23,6 +24,13 @@ const Fight = () => {
     if (uData.compete.recordedDate === today && uData.compete.fightsToday >= '5') {
       console.error('Max fights per day reached.')
       alert('Max fights per day reached. Come back tomorrow!')
+      return
+    }
+
+    //Si NO es el mismo día y no ha reclamado recompensas
+    if (uData.compete.recordedDate != today && uData.compete.points > 0) {
+      console.log('You must claim your past rewards before fighting in a new day.')
+      alert('You must claim your past rewards before fighting in a new day.')
       return
     }
 
@@ -74,13 +82,19 @@ const Fight = () => {
   }
 
   const handleClaimRewards = () => {
-    
+    //entregar recompensas
+
+    //set points a 0
+    setUserDataProperty(uData.username, 'compete.points', 0)
+
+    // *Actualizar todo useState
+    setUData(getUserDataByUsername(uData.username))
   }
 
   const changeDate = () => {
     const competeObject = {
       recordedDate: "07/13/2023",
-      fightsToday: 0,
+      fightsToday: 5,
       fightInProgress: "false",
       myFighter: "",
       myOpponent: "",
@@ -92,12 +106,12 @@ const Fight = () => {
       },
       rounds : [],
       winMethod: "",
-      points: 0
+      points: 1000
     }
 
     console.log('(testing)');
     //setUserDataProperty(uData.username, 'compete', competeObject)
-    setUserDataProperty(uData.username, 'compete.recordedDate', "07/13/2023")
+    setUserDataProperty(uData.username, 'compete.recordedDate', "07/18/2023")
 
     // *Actualizar todo useState
     setUData(getUserDataByUsername(uData.username))
@@ -170,9 +184,11 @@ const Fight = () => {
               GO TO FIGHT IN PROGRESS
             </button>
           )}
-          {uData?.compete?.fightInProgress === 'false' && uData?.compete?.fightsToday === 5 && (
+          {uData?.compete?.fightInProgress === 'false' 
+          && uData?.compete?.fightsToday === 5 
+          && uData?.compete?.points > 0 &&(
             <button className='flex justify-center w-full p-2 rounded bg-sky-600 hover:bg-sky-700 border border-solid border-sky-400 font-oswald text-zinc-50'
-            onClick={handleStart}>
+            onClick={handleClaimRewards}>
               CLAIM ALL REWARDS TODAY
             </button>
           )}
