@@ -82,6 +82,16 @@ const Fight = () => {
   }
 
   const handleClaimRewards = () => {
+    //verificar
+    /* fight in progress - false
+    fights today 5
+    points > 0 */
+
+    /* o:
+    fight in progress - false
+    today =! dateRecorded
+    points > 0 */
+
     //entregar recompensas
 
     //set points a 0
@@ -115,6 +125,20 @@ const Fight = () => {
 
     // *Actualizar todo useState
     setUData(getUserDataByUsername(uData.username))
+  }
+
+  /* buttons */
+  const renderClaimRewardsBtn = () => {
+    if (uData?.compete?.fightInProgress === 'true' || 
+      uData?.compete?.fightsToday != 5 && uData?.compete?.recordedDate === today || 
+      uData?.compete?.points === 0) return
+
+      return (
+      <button className='flex justify-center w-full p-2 rounded bg-sky-600 hover:bg-sky-700 border border-solid border-sky-400 font-oswald text-zinc-50'
+      onClick={handleClaimRewards}>
+        CLAIM ALL REWARDS TODAY
+      </button>
+    )
   }
 
   return (
@@ -184,14 +208,7 @@ const Fight = () => {
               GO TO FIGHT IN PROGRESS
             </button>
           )}
-          {uData?.compete?.fightInProgress === 'false' 
-          && uData?.compete?.fightsToday === 5 
-          && uData?.compete?.points > 0 &&(
-            <button className='flex justify-center w-full p-2 rounded bg-sky-600 hover:bg-sky-700 border border-solid border-sky-400 font-oswald text-zinc-50'
-            onClick={handleClaimRewards}>
-              CLAIM ALL REWARDS TODAY
-            </button>
-          )}
+          {renderClaimRewardsBtn()}
         </div>
       <div className='flex flex-col justify-center w-4/5 gap-2'>
         <button className='flex justify-center w-full p-2 rounded bg-sky-600 hover:bg-sky-700 border border-solid border-sky-400 font-oswald text-zinc-50'
