@@ -3,6 +3,7 @@ import hasbi from '../assets/fighters_img/Hasbi.png'
 import cat from '../assets/fighters_img/Cat.png'
 import dj from '../assets/fighters_img/DJ.png'
 import silva from '../assets/fighters_img/AndersonSilva.png'
+import mcgregor from '../assets/fighters_img/ConorMcGregor.png'
 
 const baseImg = 'https://dmxg5wxfqgb4u.cloudfront.net/styles/event_results_athlete_headshot/s3';
 const baseImg2 = 'https://dmxg5wxfqgb4u.cloudfront.net/styles/athlete_bio_full_body';
@@ -3864,6 +3865,33 @@ export const fighters = [
       bjj: 90,
       health: 92,
       stamina: 93,
+    }
+  },
+  {
+    id: 707,
+    rarity: weights.lr.value,
+    card_type: 'legend',
+    username: 'mcgregor',
+    name: 'Conor McGregor',
+    aka: 'The Notorius',
+    front_image: '',
+    full_image: mcgregor,
+    rank: 99,
+    record: '22-6',
+    division: {
+      short_name: 'LW',
+      id: 4,
+      long_name: 'Lightweight',
+    },
+    country: 'IE',
+    stats: {
+      overall: 93,
+      striking: 96,
+      defense: 93,
+      wrestling: 88,
+      bjj: 88,
+      health: 93,
+      stamina: 92,
     }
   },
   {
