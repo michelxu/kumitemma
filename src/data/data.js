@@ -3895,6 +3895,33 @@ export const fighters = [
     }
   },
   {
+    id: 708,
+    rarity: weights.lr.value,
+    card_type: 'legend',
+    username: 'cormier',
+    name: 'Daniel Cormier',
+    aka: 'DC',
+    front_image: '',
+    full_image: 'https://static.wikia.nocookie.net/boxff/images/a/aa/Daniel_Cormier.png',
+    rank: 99,
+    record: '22-3',
+    division: {
+      short_name: 'HW',
+      id: 8,
+      long_name: 'Heavyweight',
+    },
+    country: 'US',
+    stats: {
+      overall: 93,
+      striking: 92,
+      defense: 91,
+      wrestling: 94,
+      bjj: 88,
+      health: 92,
+      stamina: 93,
+    }
+  },
+  {
     id: 800,  
     rarity: weights.lr.value,
     card_type: 'star',
@@ -3923,7 +3950,7 @@ export const fighters = [
   },
   {
     id: 801,  
-    rarity: weights.lr.value,
+    rarity: weights.ur.value,
     card_type: 'star',
     username: 'hasbulla',
     name: `Magomedov Hasbulla`,
@@ -3977,7 +4004,7 @@ export const fighters = [
   },
   {
     id: 803,  
-    rarity: weights.lr.value,
+    rarity: weights.ur.value,
     card_type: 'star',
     username: 'slice',
     name: `Kimbo Slice`,
@@ -4000,6 +4027,33 @@ export const fighters = [
       bjj: 80,
       health: 90,
       stamina: 85,
+    }
+  },
+  {
+    id: 804,  
+    rarity: weights.ur.value,
+    card_type: 'star',
+    username: 'ferguson',
+    name: `Tony Ferguson`,
+    aka: 'El Cucuy',
+    front_image: '',
+    full_image: `https://theallstar.io/wp-content/uploads/2021/07/69408252Fprofile-galery252Ffullbodyleft-picture252FFERGUSON_TONY_L_05-15.png`,
+    rank: 99,
+    record: '25-3-0',
+    division: {
+      short_name: 'LW',
+      id: 4,
+      long_name: 'Lightweight',
+    },
+    country: 'US',
+    stats: {
+      overall: 89,
+      striking: 89,
+      defense: 87,
+      wrestling: 87,
+      bjj: 90,
+      health: 93,
+      stamina: 95,
     }
   },
 
