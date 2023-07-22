@@ -35,7 +35,7 @@ const Opening = () => {
 
     //3. Pasarlo a un array de elementos a renderizar
     const jsxElements = [
-      <img key={1} src={flag} className='flex w-32 bounce-in-top' />,
+      <img key={1} src={flag} className='flex w-32 bounce-in-top'/>,
       <div key={2} className='flex flex-col bounce-in-top'>
         <p className='text-7xl font-oswald font-medium tracking-tighter text-zinc-50'>{best_card[0].stats.overall}</p>
         <p className='text-xl text-center font-oswald font-medium tracking-tighter text-zinc-50'>OVERALL</p>

@@ -124,6 +124,7 @@ const logout = () => {
       setUserDataByUsername(username, userData);
     }
   };*/
+  
   // Updated, handles nested properties
   const setUserDataProperty = (username, propertyName, value) => {
     const userData = getUserDataByUsername(username);

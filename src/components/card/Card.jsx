@@ -76,7 +76,7 @@ const Card = ({id}) => {
   const cardClass = `flex flex-col w-48 h-64 rounded select-none border-solid border-2 relative
   ${cardTypeClasses[fighter.card_type].bg} `
 
-  const cardName = `text-center text-xl font-poppins italic tracking-tighter max-w-full
+  const cardName = `text-center text-xl font-poppins italic tracking-tighter truncate line-clamp-1 max-w-full
   ${cardTypeClasses[fighter.card_type].name}`
 
   const cardTopPanel = `flex flex-col items-center text-center font-poppins absolute -top-0.5 right-1.5 z-10

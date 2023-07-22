@@ -39,7 +39,11 @@ const Login = () => {
       return
     }
     if (username.length < 4){
-      alert('Please enter at least 4 characters')
+      alert('Please enter at least 4 characters.')
+      return
+    }
+    if (username.length > 18){
+      alert('Please enter max 18 characters.')
       return
     }
 
@@ -67,6 +71,23 @@ const Login = () => {
         "myCollection": [],
         "unassigned": [],
         "packs": [],
+        "compete": {
+          "fightInProgress": "",
+          "fightsToday" : 0,
+          "myFighter": "",
+          "myOpponent": "",
+          "points": 0,
+          "recordedDate": "",
+          "rounds": [],
+          "roundsWinner": [],
+          "scorecard": {
+            "myFighter": [],
+            "myOpponent": [],
+            "myOdds": []
+          },
+          "winMethod": "",
+          "winner": ""
+        }
       }
       insertNewUser(newUserData)
       setUData(newUserData)

@@ -9,6 +9,7 @@ import Panel from '../components/panels/Panel';
 import panel_pack_01 from '../assets/panel_pack_01.png' //images
 import panel_pack_02 from '../assets/panel_pack_02.png'
 import my_cards_05 from '../assets/my_cards_05.png'
+import my_cards_06 from '../assets/my_cards_06.png'
 import kumite_logo_sm from '../assets/kumite_logo_sm.png'
 import settings from '../assets/settings.png'
 
@@ -29,7 +30,7 @@ const Home = () => {
       image: panel_pack_01,
       description: 'Visit the Store. Open packs and trade your duplicate ones to collect all the Fighters.',
       to: 'store',
-      type: 'no_description_link',
+      type: 'description_link',
     },
     {
       title: 'Unassigned items',
@@ -51,6 +52,13 @@ const Home = () => {
       description: '',
       to: 'about',
       type: 'half_no_description',
+    },
+    {
+      title: 'Compete',
+      image: my_cards_06,
+      description: 'Compete on the octagon with fighters from your collection to earn some rewards.',
+      to: 'compete',
+      type: 'description_link',
     },
   ]
 
@@ -113,6 +121,7 @@ const Home = () => {
       <div className="flex flex-col justify-center items-center mb-8 mx-auto max-w-5xl mt-8 gap-6 select-none">
         {uData?.unassigned?.length > 0 && <Panel props={panels[2]}/>}
         <Panel props={panels[0]}/>
+        <Panel props={panels[5]}/>
         <Panel props={panels[1]}/>
         <div className='flex flex-row justify-center items-center w-11/12 gap-6'>
           <Panel props={panels[3]}/>

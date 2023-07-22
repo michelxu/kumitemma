@@ -4,22 +4,30 @@ import Contexto from '../../context/Contexto';
 import Layout from '../../components/layout/Layout' //components
 import { getFighter, getRandomNumber } from '../../utils/utils'; // functions
 import { fighters } from '../../data/data'; // data
-import { findOpponentByDivision, getRounds } from '../../utils/compete_utils';
+import { findOpponentByDivision, getRounds, tradePointsForRewards } from '../../utils/compete_utils';
 import Card from '../../components/card/Card';
+import DataBox from '../../components/00data_boxes/data_box/DataBox';
 
 const Fight = () => {
   const navegacion = useNavigate();
-  const {uData, setUData, getUserDataByUsername, setUserDataProperty} = useContext(Contexto)
+  const {uData, setUData, getUserDataByUsername, setUserDataProperty, updateUserDataProperty} = useContext(Contexto)
   const [isClicked, setIsClicked] = useState(false) //animación
-  //const today = new Date().toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' })
-  const today = "07/19/2023"
+  const today = new Date().toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' })
+  //const today = "07/20/2023"
+
+  // Define the classes for each filter
+  const filterWin = 'saturate-150 contrast-125'
+  const filterLoss = 'grayscale contrast-125'
+  // Determine which filter to apply based on the winner
+  const filterClassMyFighter = uData?.compete?.winner === 'myFighter' ? filterWin : uData?.compete?.winner === 'myOpponent' || uData?.compete?.winner === 'Draw' ? filterLoss : ''
+  const filterClassMyOpponent = uData?.compete?.winner === 'myOpponent' ? filterWin : uData?.compete?.winner === 'myFighter' || uData?.compete?.winner === 'Draw' ? filterLoss : ''
 
   useEffect(() => {
     if (uData && Object.keys(uData).length === 0) return //espera a que cargue uData
 
   }, [uData])
 
-  const handleStart = () => {
+  const handleNewFight = () => {
     //Si es el mismo día y ya se peleó 5 veces: Volver
     if (uData.compete.recordedDate === today && uData.compete.fightsToday >= '5') {
       console.error('Max fights per day reached.')
@@ -51,9 +59,11 @@ const Fight = () => {
     /* *********** Resetear data de la antigua pelea *********** */
     setUserDataProperty(uData.username, 'compete.fightInProgress', 'true')
     setUserDataProperty(uData.username, 'compete.winner', "")
+    setUserDataProperty(uData.username, 'compete.winMethod', "")
     setUserDataProperty(uData.username, 'compete.rounds', [])
     setUserDataProperty(uData.username, 'compete.scorecard.myFighter', [])
     setUserDataProperty(uData.username, 'compete.scorecard.myOpponent', [])
+    setUserDataProperty(uData.username, 'compete.scorecard.myOdds', [])
     setUserDataProperty(uData.username, 'compete.roundsWinners', [])
 
     /* *********** Desarrollar la pelea y guardar la data *********** */
@@ -77,28 +87,26 @@ const Fight = () => {
     setUserDataProperty(uData.username, 'compete.myFighter', myFighter.id)
     setUserDataProperty(uData.username, 'compete.myOpponent', myOpponent.id)
 
-    // *Actualizar todo useState
+    // Actualizar todo useState
     setUData(getUserDataByUsername(uData.username))
   }
 
-  const handleClaimRewards = () => {
-    //verificar
-    /* fight in progress - false
-    fights today 5
-    points > 0 */
+  const claimRewards = () => {
+    const points = uData.compete?.points
+    const currentCoins = uData.coins
+    //Set rewards
+    const { packs, coins} = tradePointsForRewards(points)
+    const totalCoins = currentCoins + coins
 
-    /* o:
-    fight in progress - false
-    today =! dateRecorded
-    points > 0 */
-
-    //entregar recompensas
-
-    //set points a 0
+    // Actualizar localStorage
     setUserDataProperty(uData.username, 'compete.points', 0)
+    updateUserDataProperty(uData.username, 'coins', totalCoins)
+    updateUserDataProperty(uData.username, 'packs', packs)
 
-    // *Actualizar todo useState
+    // Actualizar todo useState
     setUData(getUserDataByUsername(uData.username))
+
+    alert(`Rewards have been claimed (${coins} coins). Visit My Packs section to see the packs.`)
   }
 
   const changeDate = () => {
@@ -127,7 +135,7 @@ const Fight = () => {
     setUData(getUserDataByUsername(uData.username))
   }
 
-  /* buttons */
+  /* *********** render buttons *********** */
   const renderClaimRewardsBtn = () => {
     if (uData?.compete?.fightInProgress === 'true' || 
       uData?.compete?.fightsToday != 5 && uData?.compete?.recordedDate === today || 
@@ -135,8 +143,8 @@ const Fight = () => {
 
       return (
       <button className='flex justify-center w-full p-2 rounded bg-sky-600 hover:bg-sky-700 border border-solid border-sky-400 font-oswald text-zinc-50'
-      onClick={handleClaimRewards}>
-        CLAIM ALL REWARDS TODAY
+      onClick={claimRewards}>
+        CLAIM TODAY'S REWARDS
       </button>
     )
   }
@@ -144,61 +152,55 @@ const Fight = () => {
   return (
     <>
     <Layout>
+    <div className='flex flex-col min-h-[calc(100%)]'>
       {uData && (
       <>
+      {/* top submenu header */}
+      <div className='flex justify-between items-center w-full h-12 bg-zinc-900 text-white py-1 px-2 border-b border-solid border-slate-600'>
+        <p className='font-medium font-oswald italic text-sm'>
+          FIGHT CENTER
+        </p>
+      </div>
       {/* fighters cards */}
-      <div className="flex flex-row justify-center items-center mb-8 mx-auto max-w-5xl mt-8 gap-4 select-none">
-        <div className={`transform scale-75 sm:scale-100 -m-6 sm:m-0 ${isClicked ? 'bounce-in-top' : ''}`}>
-          <Card id={uData.compete?.myFighter}/>
+      <div className="flex flex-row justify-center items-center mx-auto max-w-5xl mb-4 mt-4 gap-4 select-none">
+        {/* my fighter card */}
+        <div className={`transform scale-75 sm:scale-100 -m-6 sm:m-0`}>
+          <div className={`${isClicked ? 'bounce-in-top' : ''} ${filterClassMyFighter}`}>
+            <Card id={uData.compete?.myFighter}/>
+          </div>
           <p className='font-poppins tracking-tight text-sm text-rose-400 pt-1'>
             MY FIGHTER
           </p>
         </div>
-        <p className='font-oswald italic font-medium tracking-tighter text-3xl text-zinc-200 me-2'>
-          VS
-        </p>
-        <div className={`transform scale-75 sm:scale-100 -m-6 sm:m-0 ${isClicked ? 'bounce-in-top' : ''}`}>
-          <Card id={uData.compete?.myOpponent}/>
+        <p className='font-oswald italic font-medium tracking-tighter text-3xl text-zinc-200 me-2'>VS</p>
+        {/* my opponent card */}
+        <div className={`transform scale-75 sm:scale-100 -m-6 sm:m-0 `}>
+          <div className={`${isClicked ? 'bounce-in-top' : ''} ${filterClassMyOpponent}`}>
+            <Card id={uData.compete?.myOpponent}/>
+          </div>
           <p className='font-poppins tracking-tight text-sm text-sky-400 pt-1'>
             MY OPPONENT
           </p>
         </div>
       </div>
-      {/* compete data */}
-      <div className='flex flex-col justify-center items-center mx-auto max-w-5xl mb-8 mt-8'>
-        <div className='flex flex-row justify-between text-zinc-50 gap-2'>
-          <p className='font-regular tracking-tight'>Today:</p>
-          <p className='font-medium tracking-tight text-amber-300'>{today}</p>
-        </div>
-        <div className='flex flex-row justify-between items-center text-zinc-50 gap-2'>
-          <p className='font-regular tracking-tight'>Last date recorded:</p>
-          <p className='font-medium tracking-tight text-amber-300'>{uData.compete?.recordedDate}</p>
-        </div>
-        <div className='flex flex-row justify-between items-center text-zinc-50 gap-2'>
-          <p className='font-regular tracking-tight'>Fights in progress:</p>
-          <p className='font-medium tracking-tight text-amber-300'>{uData.compete?.fightInProgress}</p>
-        </div>
-        <div className='flex flex-row justify-between items-center text-zinc-50 gap-2'>
-          <p className='font-regular tracking-tight'>Winner:</p>
-          <p className='font-medium tracking-tight text-amber-300'>{uData.compete?.winner}</p>
-        </div>
-        <div className='flex flex-row justify-between items-center text-zinc-50 gap-2'>
-          <p className='font-regular tracking-tight'>Fights this day:</p>
-          <p className='font-medium tracking-tight text-amber-300'>{uData.compete?.fightsToday}</p>
-        </div>
-        <div className='flex flex-row justify-between items-center text-zinc-50 gap-2'>
-          <p className='font-regular tracking-tight'>Points:</p>
-          <p className='font-medium tracking-tight text-amber-300'>{uData.compete?.points}</p>
-        </div>
+      {/* new data panels */}
+      <div className='grid grid-cols-2 justify-center w-4/5 mx-auto max-w-5xl mt-4 gap-2'>
+        <DataBox title='Last date recorded' description={uData?.compete?.recordedDate}/>
+        <DataBox title='Fights in progress' description={uData?.compete?.fightInProgress}/>
+        <DataBox title='Winner' description={uData?.compete?.winner}/>
+        <DataBox title='Win Method' description={uData?.compete?.winMethod}/>
+        <DataBox title='Fights today' description={uData?.compete?.fightsToday}/>
+        <DataBox title='My points' description={uData?.compete?.points}/>
       </div>
       </>
       )}
+      <div className='flex-1'></div>
       {/* buttons */}
-      <div className="flex flex-col justify-center items-center mb-8 mx-auto max-w-5xl mt-8 gap-2 select-none">
-        <div className='flex flex-col justify-center w-4/5 gap-2'>
-          {uData?.compete?.fightInProgress === 'false' && (
+      <div className="flex flex-col justify-center items-center mb-4 w-4/5 mx-auto max-w-5xl mt-8 gap-2 select-none">
+        <div className='flex flex-col justify-center w-full gap-2'>
+          {(uData?.compete?.fightInProgress === 'false' || uData?.compete?.fightInProgress === '') && (
             <button className='flex justify-center w-full p-2 rounded bg-rose-600 hover:bg-rose-700 border border-solid border-rose-400 font-oswald text-zinc-50'
-            onClick={handleStart}>
+            onClick={handleNewFight}>
               NEW FIGHT
             </button>
           )}
@@ -210,13 +212,14 @@ const Fight = () => {
           )}
           {renderClaimRewardsBtn()}
         </div>
-      <div className='flex flex-col justify-center w-4/5 gap-2'>
-        <button className='flex justify-center w-full p-2 rounded bg-sky-600 hover:bg-sky-700 border border-solid border-sky-400 font-oswald text-zinc-50'
-        onClick={changeDate}>
-          test btn. change date
-        </button>
+        <div className='flex flex-col justify-center w-full'>
+          <button className='flex justify-center w-full p-2 rounded bg-zinc-600 hover:bg-zinc-700 border border-solid border-zinc-400 font-oswald text-zinc-50'
+          onClick={changeDate}>
+            test btn. change date
+          </button>
+        </div>
       </div>
-      </div>
+    </div>
     </Layout>
     </>
   )

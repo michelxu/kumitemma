@@ -101,9 +101,7 @@ export const simulateARound = (myFighter, myOpponent, stat) => {
 }
 
 /* r o u n d   w i n   m e t h o d */
-
 // Pick a win method after a winner get picked
-// 3, 1.5 and 1 for stat difference
 export const pickWinRoundMethod = (winner, myFighter, myOpponent, statName) => {
   let statDifference = Math.abs(myFighter.stats[statName] - myOpponent.stats[statName]);
   let winMethod;
@@ -125,7 +123,7 @@ export const pickWinRoundMethod = (winner, myFighter, myOpponent, statName) => {
     statDifference = 0;
   }
 
-  const decisionProbability = statDifference === 0 ? 75 : 75 - statDifference * 3;
+  const decisionProbability = statDifference === 0 ? 75 : 75 - statDifference * 3; //deben sumar 3 las stats de abajo
   const highestStatProbability = statDifference === 0 ? 15 : 15 + statDifference * 1.5;
   const lowestStatProbability = statDifference === 0 ? 5 : 5 + statDifference * 1;
   const decision8Probability = statDifference === 0 ? 5 : 5 + statDifference * 0.5;
@@ -150,6 +148,7 @@ export const pickWinRoundMethod = (winner, myFighter, myOpponent, statName) => {
 };
 
 
+/* f i g h t   w i n   m e t h o d */
 /*Determinar quién ganó en base al scorecard
 considerando que puede haber un string y no solo números*/
 export const getWinnerByScorecard = (myFighterScorecard, myOpponentScorecard) => {
@@ -169,6 +168,21 @@ export const getWinnerByScorecard = (myFighterScorecard, myOpponentScorecard) =>
   return totalScorecardMyF > totalScorecardMyOpp ? 'myFighter' : 'myOpponent';
 };
 
+//Fight win method
+export const getWinMethodByScorecard = (myFighterScorecard, myOpponentScorecard) => {
+  const hasTKO = myFighterScorecard.includes('KO/TKO') || myOpponentScorecard.includes('KO/TKO');
+  const hasSUB = myFighterScorecard.includes('SUB') || myOpponentScorecard.includes('SUB');
+
+  if (hasTKO) return 'KO/TKO'
+  if (hasSUB) return 'SUB'
+
+  const totalScorecardMyF = getSumArray(myFighterScorecard);
+  const totalScorecardMyOpp = getSumArray(myOpponentScorecard);
+
+  return `${totalScorecardMyF}/${totalScorecardMyOpp}`
+};
+
+/* r e w a r d s */
 export const getRewardPoints = (myFighterScorecard, myOpponentScorecard) => {
   const hasTKO = myFighterScorecard.includes('KO/TKO') || myOpponentScorecard.includes('KO/TKO');
   const hasSUB = myFighterScorecard.includes('SUB') || myOpponentScorecard.includes('SUB');
@@ -184,5 +198,26 @@ export const getRewardPoints = (myFighterScorecard, myOpponentScorecard) => {
 
   if (totalScorecardMyF === totalScorecardMyOpp) return 250;
   return totalScorecardMyF > totalScorecardMyOpp ? 500 : 150;
+}
+
+export const tradePointsForRewards = (points) => {
+  let packs
+  let coins
+
+  if (points >= 0 && points <= 1350) { //2w-2l-1l,ko 1350
+    packs = [4, 4]
+    coins = 350
+  } else if (points >= 1351 && points <= 1800) { //3w-2l 1800
+    packs = [4, 5]
+    coins = 750
+  } else if (points >= 1801 && points <= 2550) { // 2w,ko-2w-1l 2550
+    packs = [4, 4, 5]
+    coins = 1500
+  } else if (points > 2550) {
+    packs = [4, 4, 5, 5]
+    coins = 2100
+  }
+
+  return {packs, coins}
 }
 
