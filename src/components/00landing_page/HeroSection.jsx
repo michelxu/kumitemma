@@ -1,10 +1,13 @@
 import React from 'react'
+import bg_img from '../../assets/bg_landing.png'
+import my_cards_02 from '../../assets/my_cards_02.png'
+import my_cards_04 from '../../assets/my_cards_04.png'
 
 const HeroSection = () => {
   return (
     <>
     <section id='home' className='relative w-full min-h-screen'> 
-    <div className='absolute inset-0 grayscale bg-cover bg-center bg-[url(https://dmxg5wxfqgb4u.cloudfront.net/styles/background_image_sm/s3/image/2021-07/071721-ufc-fight-night-makhachev-moises-scorecards-hero.jpg)]'>
+    <div className={`absolute inset-0 bg-cover bg-center`} style={{ backgroundImage: `url(${bg_img})` }}>
     {/* bg-gradient-to-t from-zinc-700 via-zinc-900 to-black */}
       <div className='container flex flex-wrap items-center justify-center mx-auto mt-10 md:px-12 md:flex-row'>
         <div className='mb-14 lg:mb-0 lg:w-1/2'>
@@ -21,7 +24,7 @@ const HeroSection = () => {
           </div>
         </div>
         <div className='lg:w-1/2'>
-          <img className='ml-auto' src='https://www.pngall.com/wp-content/uploads/13/UFC-PNG-Photos.png' alt='Kumite Banner' />
+          <img className='ml-auto' src={my_cards_04} alt='Kumite Banner' />
         </div>
       </div>
     </div>
