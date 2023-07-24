@@ -6,15 +6,15 @@ import my_cards_04 from '../../assets/my_cards_04.png'
 const HeroSection = () => {
   return (
     <>
-    <section id='home' className='relative w-full min-h-screen'> 
-    <div className={`absolute inset-0 bg-cover bg-center`} style={{ backgroundImage: `url(${bg_img})` }}>
+    <section id='home' className='flex w-full min-h-[100vh] p-0'> 
+    <div className=' inset-0 bg-cover bg-center w-full' style={{ backgroundImage: `url(${bg_img})` }}>
     {/* bg-gradient-to-t from-zinc-700 via-zinc-900 to-black */}
-      <div className='container flex flex-wrap items-center justify-center mx-auto mt-10 md:px-12 md:flex-row'>
+      <div className='container flex flex-wrap items-center justify-center mx-auto pt-32 px-4 md:px-12 md:flex-row'>
         <div className='mb-14 lg:mb-0 lg:w-1/2'>
-          <h1 className='max-w-xl leading-none text-center text-4xl mb-5 lg:text-left lg:text-5xl tracking-tight font-oswald font-semibold text-rose-500 uppercase'>
+          <h1 className='max-w-xl leading-none text-center text-6xl mb-5 lg:text-left lg:text-7xl tracking-tight font-oswald font-semibold text-rose-500 uppercase'>
             Kumite MMA
           </h1>
-          <p className='max-w-xl text-center text-xl text-zinc-100 font-poppins tracking-tight leading-tight lg:text-left lg:max-w-lg'>
+          <p className='max-w-xl text-center text-xl sm:text-xl text-zinc-100 font-poppins tracking-tight leading-tight lg:text-left lg:max-w-lg'>
             Card Collection Game. Compete through different challenges to earn rewards, win packs and complete your collection.
           </p>
           <div className='flex justify-center mt-14 lg:justify-start'>
@@ -23,8 +23,8 @@ const HeroSection = () => {
             </button>
           </div>
         </div>
-        <div className='lg:w-1/2'>
-          <img className='ml-auto' src={my_cards_04} alt='Kumite Banner' />
+        <div className='lg:w-1/2 mb-8'>
+          <img className='ml-auto ' src={my_cards_04} alt='Kumite Banner' />
         </div>
       </div>
     </div>

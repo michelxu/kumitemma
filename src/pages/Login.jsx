@@ -107,7 +107,6 @@ const Login = () => {
   return (
     <>
     <div className='flex flex-col overflow-hidden items-center min-h-screen bg-gradient-to-t from-black via-zinc-900 to-black py-0'>
-      <CardSlider position='right'/>
       <div className='flex-1'></div>
       {/* input login */}
       <div className='flex flex-col w-4/5 max-w-lg py-20 px-12 sm:px-20 gap-2 bg-zinc-900 rounded'>
@@ -135,7 +134,6 @@ const Login = () => {
         </Link>
       </div>
       <div className='flex-1'></div>
-      <CardSlider position='left'/>
     </div>
     </>
   )

@@ -101,7 +101,7 @@
 }
 .card-container-right {
   display: flex;
-  animation: slideAnimation 600s linear infinite;
+  animation: slideAnimation 1200s linear infinite;
   animation-delay: 0s; /* Delay the animation to start from the right */
   position: relative;
 }
@@ -118,7 +118,7 @@
 
 .card-container-left {
   display: flex;
-  animation: slideAnimationToL 1000s linear infinite;
+  animation: slideAnimationToL 1500s linear infinite;
   animation-delay: -350s; /* Delay the animation to start from the right */
   position: relative;
   left: 100%; /* Start from the right edge */

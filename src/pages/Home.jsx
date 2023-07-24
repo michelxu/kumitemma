@@ -67,6 +67,8 @@ const Home = () => {
 
   //S t a r t :
   useEffect(() => {
+    window.scrollTo(0, 0);
+
     //for new users to claim their welcome package
     if (uData?.xp === 0){
       console.log('New user: Redirecting to /welcome');

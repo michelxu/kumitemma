@@ -7,6 +7,9 @@ export default {
   ],
   theme: {
     extend: {
+      height: {
+        '70vh': '70vh',
+      },
       fontFamily: {
         'poppins': ['Poppins', 'sans-serif'],
         'anton': ['Anton', 'sans-serif'],
