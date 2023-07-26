@@ -23,7 +23,7 @@ const Login = () => {
   const handleEnterPress = (e) => {
     if (e.key === 'Enter') login(referencia)
 
-    if (e.currentTarget.value != null) console.log('handleEnterPress', referencia)
+    //if (e.currentTarget.value != null) console.log('handleEnterPress', referencia)
   };
 
   //on change
@@ -132,6 +132,9 @@ const Login = () => {
             ABOUT KUMITE MMA
           </p>
         </Link>
+        <p className='font-poppins text-rose-500 tracking-tight text-center text-sm mt-8'>
+          This is a Demo App. Your data will be stored in your Web Browser only. Do not delete the data storage.
+        </p>
       </div>
       <div className='flex-1'></div>
     </div>

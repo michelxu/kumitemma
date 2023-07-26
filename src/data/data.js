@@ -4,6 +4,7 @@ import cat from '../assets/fighters_img/Cat.png'
 import dj from '../assets/fighters_img/DJ.png'
 import silva from '../assets/fighters_img/AndersonSilva.png'
 import mcgregor from '../assets/fighters_img/ConorMcGregor.png'
+import brucelee from '../assets/fighters_img/BruceLee.png'
 
 const baseImg = 'https://dmxg5wxfqgb4u.cloudfront.net/styles/event_results_athlete_headshot/s3';
 const baseImg2 = 'https://dmxg5wxfqgb4u.cloudfront.net/styles/athlete_bio_full_body';
@@ -4056,6 +4057,33 @@ export const fighters = [
       stamina: 95,
     }
   },
+  {
+    id: 805,  
+    rarity: weights.ur.value,
+    card_type: 'star',
+    username: 'lee',
+    name: `Bruce Lee`,
+    aka: 'The Dragon',
+    front_image: '',
+    full_image: brucelee,
+    rank: 99,
+    record: '??',
+    division: {
+      short_name: 'FW',
+      id: 3,
+      long_name: 'Featherweight',
+    },
+    country: 'HK',
+    stats: {
+      overall: 90,
+      striking: 93,
+      defense: 93,
+      wrestling: 85,
+      bjj: 85,
+      health: 89,
+      stamina: 89,
+    }
+  },
 
 ];
 
@@ -4249,6 +4277,11 @@ export const countries = [
     id: 'CA',
     name: 'Canada',
     image: `${baseCountry}/ca.svg`,
+  },
+  {
+    id: 'HK',
+    name: 'Hong Kong',
+    image: `${baseCountry}/hk.svg`,
   },
 ]
 

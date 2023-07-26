@@ -9,6 +9,13 @@
   cursor: pointer;
 }
 
+/* on md screen */
+@media (min-width: 768px) {
+  .feature-container {
+    min-height: 222px;
+  }
+}
+
 /* truncate panel component text */
 .truncate-lines-2 {
   display: -webkit-box;

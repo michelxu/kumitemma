@@ -1,6 +1,5 @@
-/* Functions for COMPETE and FIGHT Sections */
-
 import { getSumArray } from "./utils";
+/* Functions for COMPETE and FIGHT Sections */
 
 /* *************** Get Rounds array
 Output ['overall', 'bjj' , 'stamina'] */

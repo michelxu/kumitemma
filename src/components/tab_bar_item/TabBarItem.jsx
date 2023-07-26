@@ -9,31 +9,21 @@ import { NavLink } from 'react-router-dom';
 const TabBarItem = (props) => {
   const {title} = props;
 
+  const iconMap = {
+    'home': HomeIcon,
+    'compete': GiPunch,
+    'store': ShoppingCartIcon,
+    'about': IoLogoOctocat,
+    'picks': GiCardExchange,
+    'collection': PiCardsFill,
+    'settings': Cog8ToothIcon,
+    'logout': ArrowLeftOnRectangleIcon,
+    'default': QuestionMarkCircleIcon,
+  }
   const renderIcon = () => {
-    switch (title) {
-      case 'home':
-        return <HomeIcon className='h-6 w-6' />;
-      case 'compete':
-        return <GiPunch className='h-6 w-6' />;
-      case 'store':
-        return <ShoppingCartIcon className='h-6 w-6' />;
-      case 'about':
-        return <IoLogoOctocat className='h-6 w-6' />;
-      case 'picks':
-        return <GiCardExchange className='h-6 w-6' />;
-      case 'collection':
-        return <PiCardsFill className='h-6 w-6' />;
-      case 'settings':
-        return <Cog8ToothIcon className='h-6 w-6' />;
-      case 'logout':
-        return <ArrowLeftOnRectangleIcon className='h-6 w-6' />;
-      case 'default':
-        return <QuestionMarkCircleIcon className='h-6 w-6' />;
-      // Add more cases for other icons if needed
-      default:
-        return <QuestionMarkCircleIcon className='h-6 w-6' />;
-    }
-  };
+    const IconComponent = iconMap[title] || QuestionMarkCircleIcon;
+    return <IconComponent className='h-6 w-6' />;
+  }
 
   return (
     <>

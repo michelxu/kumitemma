@@ -72,7 +72,7 @@ const Welcome = () => {
       <div className="flex flex-col justify-center items-center mx-auto mb-8 max-w-5xl mt-8 gap-2">
         <Panel props={panels[0]}/>
         <Panel props={panels[1]}/>
-        <button className="font-regular text-2xl font-oswald text-white rounded w-11/12 lg:max-w-[900px] p-2.5 mt-4 bg-rose-500 hover:bg-rose-600" 
+        <button className="font-regular text-2xl font-oswald text-white rounded w-11/12 lg:max-w-[900px] p-2.5 mt-4 bg-rose-500 hover:bg-rose-600 border border-rose-400" 
           onClick={() => claimRewards()}>
           CLAIM REWARDS
         </button>

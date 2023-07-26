@@ -4,7 +4,7 @@
       "username": "xmichxl",
       "coins": 5000,
       "xp": 1150,
-      "myCollection": [15, 11, 23, 3],
+      "myCollection": [15, 11, 23, 3, 803],
       "unassigned": [9, 10, 3, 33, 44, 55, 66],
       "packs": [3, 3, 4, 5, 1, 2, 3, 1, 2, 3, 3, 3],
       "compete": {
@@ -29,7 +29,7 @@
       "username": "tonymkt",
       "coins": 5000,
       "xp": 1150,
-      "myCollection": [15, 11, 23, 3],
+      "myCollection": [15, 11, 23, 3, 803],
       "unassigned": [9, 10, 3, 33, 44, 55, 66],
       "packs": [3, 3, 4, 5, 1, 2, 3, 1, 2, 3, 3, 3],
       "compete": {
@@ -54,7 +54,7 @@
       "username": "fegofn64",
       "coins": 5000,
       "xp": 1150,
-      "myCollection": [15, 11, 23, 3],
+      "myCollection": [15, 11, 23, 3, 803],
       "unassigned": [9, 10, 3, 33, 44, 55, 66],
       "packs": [3, 3, 4, 5, 1, 2, 3, 1, 2, 3, 3, 3],
       "compete": {
@@ -80,7 +80,7 @@
       "coins": 15000,
       "xp": 30000,
       "myCollection": [34, 54, 64, 21, 88],
-      "unassigned": [44, 55, 66, 77, 88, 99],
+      "unassigned": [44, 55, 66, 77, 88, 99, 111],
       "packs": [3, 3, 4, 5, 1, 2, 3, 1, 2, 3, 3, 3],
       "compete": {
         "recordedDate": "",

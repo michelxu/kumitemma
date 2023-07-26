@@ -19,7 +19,7 @@ const CardShowcase = () => {
 
   return (
     <>
-    <section id='collection' className='flex flex-col overflow-hidden items-end py-0 bg-gradient-to-t from-slate-900 via-slate-700 to-slate-900 border-t border-b border-slate-700'>
+    <section id='collection' className='flex flex-col overflow-hidden items-end py-0 bg-gradient-to-t from-rose-900 via-rose-400 to-rose-900 border-t border-b border-rose-500'>
       <div className={`card-container-right`}>
         {renderCards()}
       </div>

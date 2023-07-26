@@ -212,12 +212,14 @@ const Fight = () => {
           )}
           {renderClaimRewardsBtn()}
         </div>
+        {/*
         <div className='flex flex-col justify-center w-full'>
           <button className='flex justify-center w-full p-2 rounded bg-zinc-600 hover:bg-zinc-700 border border-solid border-zinc-400 font-oswald text-zinc-50'
           onClick={changeDate}>
             test btn. change date
           </button>
         </div>
+        */}
       </div>
     </div>
     </Layout>

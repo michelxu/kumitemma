@@ -131,13 +131,14 @@ const Home = () => {
         </div>
       </div>
 
-      {/* title description button */}
+      {/* title description button
       <div className="flex flex-col justify-center items-center gap-4 mt-8 mb-8">
         <button className="font-semibold text-white rounded p-1.5 bg-blue-500 hover:bg-blue-600 disabled:bg-gray-500"  onClick={openPack}>
           Open Pack
         </button>
       </div>
-      {/* cards section */}
+       */}
+      {/* cards section
       <div className="flex flex-wrap justify-center items-center mb-8 mx-auto max-w-5xl">
         {showDiv && (
           <div className="flex flex-wrap justify-center items-center gap-2 bounce-in-top">
@@ -146,6 +147,7 @@ const Home = () => {
           </div>
         )}
       </div>
+       */}
     </Layout>
     </>
   )

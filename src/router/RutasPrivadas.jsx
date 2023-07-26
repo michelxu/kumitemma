@@ -7,7 +7,7 @@ const RutasPrivadas = ({ children }) => {
 
   return (estado) //si está logueado
   ? children
-  : <Navigate to="/login" />
+  : <Navigate to="/kumite" />
 }
 
 export default RutasPrivadas
