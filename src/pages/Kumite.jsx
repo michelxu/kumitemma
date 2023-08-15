@@ -27,7 +27,6 @@ const Kumite = () => {
   return (
     <>
     <div className='flex flex-col min-h-screen bg-zinc-900 select-none'> 
-      {/*<NavBar/>*/}
       <NavBar2/>
       <HeroSection/>
 
