@@ -3,6 +3,7 @@ import Feature from '../components/00landing_page/Feature'
 import Footer from '../components/00landing_page/Footer'
 import HeroSection from '../components/00landing_page/HeroSection'
 import NavBar from '../components/00landing_page/NavBar'
+import NavBar2 from '../components/00landing_page/NavBar2'
 
 const Kumite = () => {
   const features = [
@@ -25,8 +26,9 @@ const Kumite = () => {
 
   return (
     <>
-    <div className='flex flex-col min-h-screen bg-zinc-900'> 
-      <NavBar/>
+    <div className='flex flex-col min-h-screen bg-zinc-900 select-none'> 
+      {/*<NavBar/>*/}
+      <NavBar2/>
       <HeroSection/>
 
       {/* collection */}

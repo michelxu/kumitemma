@@ -1,22 +1,18 @@
 import { Link, animateScroll as scroll } from "react-scroll";
-import { Bars3Icon } from '@heroicons/react/24/solid'
-import kumite_logo_sm from '../../assets/kumite_logo_sm.png'
 import kumite_logo_2 from '../../assets/kumite_logo_rose.png'
-import kumite_logo_3 from '../../assets/kumite_logo_w.png'
-
 
 const NavBar = () => {
   return (
     <nav className="z-10 bg-zinc-900 border-b border-zinc-700">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
       <a href="#" className="flex items-center">
-          <img src={kumite_logo_2} className="h-7 mr-3" alt="Flowbite Logo" />
+          <img src={kumite_logo_2} className="h-7 mr-3" alt="Logo" />
       </a>
       <div className="flex md:order-2">
           <a href='/kumitemma/login' className="flex items-center font-oswald uppercase text-white bg-rose-500 hover:bg-rose-600 font-regular rounded text-xs sm:text-sm px-2 py-0 sm:px-4 sm:py-2 text-center mr-3 md:mr-0">
             Get started
           </a>
-          <button data-collapse-toggle="navbar-cta" type="button" className="inline-flex items-center p-2 w-9 h-9 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-zinc-800 focus:outline-none focus:ring-2 focus:ring-zinc-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-cta" aria-expanded="false">
+          <button data-collapse-toggle="navbar-cta" type="button" className="inline-flex items-center p-2 w-9 h-9 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-zinc-800 focus:outline-none focus:ring-2 focus:ring-zinc-700" aria-controls="navbar-cta" aria-expanded="false">
             <span className="sr-only">Open main menu</span>
             <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
                 <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15"/>
